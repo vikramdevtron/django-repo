@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'polls',
         'USER': 'root',
         'PASSWORD': 'passcode',
-        'HOST': 'sql-ch-dev-mysql.dev',
+        'HOST': 'sql-ch-dev-mysql',
         'PORT': '3306',
     }
 }
