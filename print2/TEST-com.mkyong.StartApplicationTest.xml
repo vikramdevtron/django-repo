@@ -63,4 +63,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
   <testcase name="testHex" classname="com.mkyong.StartApplicationTest" time="0.001"/>
+  <testcase name="testHex1" classname="com.mkyong.StartApplicationTest" time="0.002"/>
 </testsuite>
