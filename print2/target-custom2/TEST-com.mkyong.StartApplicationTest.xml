@@ -1,89 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="test">
-    <testsuite name="suite 1" time="time">
-        <properties>
-            <property name="name only" />
-        </properties>
-        <properties>
-            <property name="prop 1" value="value 1" />
-            <property name="prop 1">value 2</property>
-            <property name="prop 1" />
-            <property name="prop 2" value="value" />
-            <property>value with no name</property>
-            <property />
-        </properties>
-        <properties>
-            <property name="seperate props" value="value" />
-        </properties>
-        <properties>value only</properties>
-        <properties />
-        <testcase>only a message</testcase>
-        <testcase name="simple passing test" />
-        <testcase name="test with time" time='time'/>
-        <testcase name="test with sub test">
-            <testcase name="the sub test" />
-        </testcase>
-        <testcase name="test with messages" message="message prop">inner message</testcase>
-        <testcase name="test passed with messages and free text">
-            HERE IS SOME TEXT
-            <passed message="message prop 1">inner massage 1</passed>
-        </testcase>
-        <testcase name="test passed with messages">
-            <passed message="message prop 1">inner massage 1</passed>
-            <passed message="message prop 2">inner massage 2</passed>
-        </testcase>
-        <testcase name="failing test with messages">
-            <failure message="message prop 1">inner massage 1</failure>
-            <failure message="message prop 2">inner massage 2</failure>
-        </testcase>
-        <testcase name="erroring test with messages">
-            <error message="message prop 1">inner massage 1</error>
-            <error message="message prop 2">inner massage 2</error>
-        </testcase>
-        <testcase name="skiping test with messages">
-            <skipped message="message prop 1">inner massage 1</skipped>
-            <skipped message="message prop 2">inner massage 2</skipped>
-        </testcase>
-        <testcase name="error and failure test with messages">
-            <error message="error message prop 1">error inner massage 1</error>
-            <failure message="failure message prop 2">failure inner massage 2</failure>
-            <testsuite name='testsuite in a testcase'>
-                <testcase name='testsuite in a testcase testcase' />
-            </testsuite>
-        </testcase>
-    </testsuite>
-    <testsuite name="suite 2">
-        <testcase name='testcase' />
-    </testsuite>
-    <testsuite name="duplicate">
-        <testcase name='testcase 1' />
-    </testsuite>
-    <testsuite name="duplicate">
-        <testcase name='testcase 2' />
-    </testsuite>
-    <testsuite name="suite with duplicate tests">
-        <testcase name='testcase duplicate' message='message 1' />
-        <testcase name='testcase duplicate' message='message 2' />
-    </testsuite>
-    <testsuite name="testcase with properties">
-        <testcase name='with properties' message='message 1'>
-
+    <testsuites>
+        <testsuite name="SUITE ONE" errors="7" tests="10" failures="2" time="0.021">
             <properties>
-                <property name="name only"/>
+                <property name="flag-type" value="bug" />
+                <property name="flag-content" value="APPLICATION DEFECT" />
+                <property name="Has a name" value="true" />
+                <property name="URL" value="/test/data.com" />
             </properties>
             <properties>
-                <property name="prop 1" value="value 1"/>
-                <property name="prop 1">value 2</property>
-                <property name="prop 1"/>
-                <property name="prop 2" value="value"/>
-                <property>value with no name</property>
-                <property/>
+                <property name="flag-type" value="bug" />
+                <property name="flag-content" value="APPLICATION DEFECT" />
+                <property name="Has a name" value="true" />
+                <property name="URL" value="/test/data.com" />
             </properties>
-            <properties>
-                <property name="seperate props" value="value"/>
-            </properties>
-            <properties>value only</properties>
-            <properties/>
-        </testcase>
-    </testsuite>
-</testsuites>
+            <testcase assertions="0" classname="SUITE ONE" name="the first test" time="0.001">
+                <error message="There was a error" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the second test" time="0.001">
+                <error message="I ignore this" type="when inner message">&lt;i&gt;WITH&lt;/i&gt;&lt;b&gt;HTML&lt;/b&gt;</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the third test" time="0.012">
+                <passed message="I ignore" type="this anyway">For some reason a passing message</passed>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the fouth test" time="0.001">
+                <error message="There was a error 1" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 1</error>
+                <error message="There was a error 2" type="java.lang.RuntimeException">java.lang.RuntimeException: There was an error 2</error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the fifth test" time="0.002">
+                <error message="This one has no inner message" type="java.lang.RuntimeException"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE ONE" name="the sixt test" time="0.001">
+                <error message="This one has no inner message or type"></error>
+            </testcase>
+        </testsuite>
+        <testsuite name="SUITE TWO" errors="0" tests="6" failures="0" time="0.021">
+            <testcase assertions="0" classname="SUITE TWO" name="the first test" time="0.001">
+                <error type="This one has no inner message or message"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the second test" time="0.001">
+                <skipped></skipped>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the third test" time="0.012">
+                <failure></failure>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the fouth test" time="0.001">
+              <error message="<i>WITH HTML</i>" type="<b>NO INNER</b>"></error>
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the fifth test" time="0.002">
+            </testcase>
+            <testcase assertions="0" classname="SUITE TWO" name="the sixt test" time="0.001">
+            </testcase>
+        </testsuite>
+    </testsuites>
